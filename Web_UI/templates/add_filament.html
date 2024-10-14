@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block content %}
+<div class="config-container">
+  <h2>Add Filament</h2>
+  <!-- We may have to implement a fieldset here for structure -->
+  <form class="form-printer" method="POST" action="/add_filament">
+    <label for="filament-color">Filament color:</label>
+    <input id="filament-color" name="filament-color" type="text" />
+    <br />
+    <label for="filament-type">Filament Type:</label>
+    <select id="filament-type" name="filament-type">
+      {% for filament in settings.settings.filaments %}
+      <option value="{{ filament }}">{{ filament }}</option>
+      {% endfor %}
+    </select>
+    <br />
+    <label for="filament-manufacturer">Filament Manufacturer:</label>
+    <input id="filament-manufacturer" name="filament-manufacturer" type="text" />
+    <br />
+    <button id="items-btn" class="primary-btn white-text" type="submit" value="submit">Add Filament</button>
+  </form>
+</div>
+{% endblock %}

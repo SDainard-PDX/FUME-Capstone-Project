@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+<meta http-equiv="refresh" content="15">
+<div class="status-container">
+    <h2>Print Farm Status</h2>
+    <div class="printer-status">
+        <!-- Note that 'data' is passed in through flask -->
+        {% for printer in printers.printers %}
+        {% if printer.status == 'Ready' %}
+            <div class="printer green-ready">
+        {% elif printer.status == 'Off Line' %}
+            <div class="printer grey">
+        {% elif printer.status == 'Pick Up' %}
+            <div class="printer orange">
+        {% elif printer.status == 'Error' %}
+            <div class="printer red">
+        {% elif printer.status == "Printing" %}
+            <div class="printer green" >
+        {% else %}
+            <div class="printer grey">
+        {%  endif %}
+            <p>Printer {{ printer.id }} - port #{{ printer.port }}</p>
+            <p>Status: {{ printer.status}} </p>
+            <!-- I need to add the 'note' -->
+            <p class="info">Job: {{ printer.job }} </p>
+            <p class="info">Nozzle Size: {{ printer.nozzleDiameter }}</p>
+            <p class="info">Filament Color: {{ printer.filamentColor }}</p>
+            <p class="info">Filament Type: {{ printer.filamentType }}</p>
+            <!-- Catch the failed prints if no more filament, needs change, etc.-->
+        {% if printer.status == 'Pick Up' %}
+        <button class="secondary-btn" id="printer{{ printer.id }}" name="make_ready">
+            Make Ready
+        </button>
+        {% elif printer.status == 'Printing' %}
+        <button class="danger-btn" id="printer{{ printer.id }}" name="e_stop">
+            <a href="{{ url_for('stop') }}?printerid={{  printer.id }}">
+                E-stop</a>
+        </button>
+        {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="jobs-container">
+    <h2>JOBS NEEDING ASSISTANCE</h2>
+    <table>
+        <thead>
+            <tr>
+                <!-- Change later -->
+                <th>Job ID</th>
+                <th>Job Name</th>
+                <th>Printer</th>
+                <th>Status</th>
+                <th>Message</th>
+                <th>Date/Time Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs.jobs %}
+            {% if job.job_status == "Error" or job.job_status == "RHI" %}
+            <tr>
+                <td>{{ job.job_ID }}</td>
+                <td>{{ job.job_name }}</td>
+                <td>{{ job.printer_assignment }}</td>
+                <td>{{ job.job_status }}</td>
+                <td class="issue">{{ job.status_message }}</td>
+                <td>{{ job.last_updated }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,216 @@
+{
+  "queue": [
+    {
+        "id": 1,
+        "jobName": "no name",
+        "type": "PLA - Black",
+        "size": 0.6,
+        "layer": 0.2,
+        "density": "20%",
+        "quantity": 1,
+        "status": "pending",
+        "issue": "",
+        "lastUpdated": "04/07/2024 3:00 pm"
+    },
+    {
+        "id": 2,
+        "jobName": "vent spacer",
+        "type": "PLA - Green",
+        "size": 0.5,
+        "layer": 0.2,
+        "density": "10%",
+        "quantity": 1,
+        "printer": "",
+        "status": "Error",
+        "issue": "No Matching Nozzle Dia.",
+        "lastUpdated": "04/07/2024 1:00 pm"
+    },
+    {
+        "id": 3.1,
+        "jobName": "Black Dog",
+        "type": "PLA - Black",
+        "size": 0.4,
+        "layer": 0.2,
+        "density": "20%",
+        "quantity": 2,
+        "printer": "A3",
+        "status": "RHI",
+        "issue": "Ready for Pickup",
+        "lastUpdated": "04/07/2024 2:00 pm"
+    },
+    {
+        "id": 3.2,
+        "type": "PLA - Black",
+        "jobName": "Black Dog",
+        "size": 0.4,
+        "layer": 0.2,
+        "density": "10%",
+        "quantity": 2,
+        "printer": "A1",
+        "status": "Printing",
+        "issue": "",
+        "lastUpdated": "04/07/2024 3:00 pm"
+    },
+    {
+        "id": 4,
+        "jobName": "Green Moss Frog",
+        "type": "PLA - Dark Green",
+        "size": 0.6,
+        "layer": 0.2,
+        "density": "10%",
+        "quantity": 2,
+        "printer": "A2",
+        "status": "Error",
+        "issue": "Filament run-out",
+        "lastUpdated": "04/07/2024 3:00 pm"
+    }
+  ],
+  "printers": [
+      {
+        "id": "A1",
+        "port": 6000,
+        "filamentColor": "Galaxy Black",
+        "filamentType": "PLA",
+        "nozzleDiameter": "0.4 mm",
+        "job": "Black dog",
+        "jobStatus": "Printing"
+      },
+      {
+        "id": "A2",
+        "port": 6001,
+        "filamentColor": "Dark Green",
+        "filamentType": "PLA",
+        "nozzleDiameter": "0.4 mm",
+        "job": "Green Moss Frog",
+        "jobStatus": "Error"
+      },
+      {
+        "id": "A3",
+        "port": 6003,
+        "filamentColor": "Galaxy Black",
+        "filamentType": "PLA",
+        "nozzleDiameter": "0.4 mm",
+        "job": "Black dog",
+        "jobStatus": "RHI"
+      },
+      {
+        "id": "B2",
+        "port": 6503,
+        "filamentColor": "Galaxy Black",
+        "filamentType": "PLA",
+        "nozzleDiameter": "0.6 mm",
+        "job": "",
+        "jobStatus": "Ready"
+      }
+    ],
+
+    "settings": {
+        "filament": ["PLA", "ABS", "PETG"],
+        "nozzleSize": [0.4, 0.6]
+    },
+
+    "filaments": [
+        {
+            "id": "1",
+            "color": "Galazy Black",
+            "type": "PLA"
+        },
+        {
+            "id": "2",
+            "color": "Dark Green",
+            "type": "PLA"
+        },
+        {
+            "id": "3",
+            "color": "Light Green",
+            "type": "PLA"
+        }
+    ],
+
+    "jobs": [
+        {
+            "job_ID": 5,
+            "order_ID": 321,
+            "job_name": "Horse",
+            "job_status": "RHI",
+            "status_message": "RHI",
+            "printer_assignment": "A1",
+            "nozzle_size_needed": 0.4,
+            "filament": "PLA",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 3:00 pm"
+        },
+        {
+            "job_ID": 6,
+            "order_ID": 324,
+            "job_name": "Elden Ring",
+            "job_status": "pending",
+            "status_message": "N/A",
+            "printer_assignment": "",
+            "nozzle_size_needed": 0.6,
+            "filament": "PLA",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 1:00 pm"
+        },
+        {
+            "job_ID": 7,
+            "order_ID": 123,
+            "job_name": "Chain Mail",
+            "job_status": "Error",
+            "status_message": "Filament Color Unavailable",
+            "printer_assignment": "B2",
+            "nozzle_size_needed": 0.4,
+            "filament": "PETG",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 6:00 pm"
+        },
+        {
+            "job_ID": 8,
+            "order_ID": 457,
+            "job_name": "Ben's Plate",
+            "job_status": "pending",
+            "status_message": "N/A",
+            "printer_assignment": "",
+            "nozzle_size_needed": 0.4,
+            "filament": "PETG",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 5:00 pm"
+        },
+        {
+            "job_ID": 9,
+            "order_ID": 234,
+            "job_name": "Ed's Hat",
+            "job_status": "Pending",
+            "status_message": "N/A",
+            "printer_assignment": "A2",
+            "nozzle_size_needed": 0.6,
+            "filament": "PLA",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 3:00 pm"
+        },
+        {
+            "job_ID": 10,
+            "order_ID": 321,
+            "job_name": "Green Moss Frog",
+            "job_status": "RHI",
+            "status_message": "RHI",
+            "printer_assignment": "B2",
+            "nozzle_size_needed": 0.4,
+            "filament": "ABS",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 1:00 pm"
+        },
+        {
+            "job_ID": 11,
+            "order_ID": 423,
+            "job_name": "PARQE",
+            "job_status": "Error",
+            "status_message": "Filament Runout",
+            "printer_assignment": "A2",
+            "nozzle_size_needed": 0.4,
+            "filament": "PLA",
+            "last_updated": "04/24/2024 3:00 pm",
+            "received": "04/07/2024 3:00 pm"
+        }
+    ]
+}

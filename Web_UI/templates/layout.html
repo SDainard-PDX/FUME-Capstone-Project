@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+      <script src="https://kit.fontawesome.com/c1285ec62a.js" crossorigin="anonymous"></script>
+    <title>FUME Capstone</title>
+  </head>
+  <body>
+    <!-- Try to implement -->
+    <div class="nav-container">
+      <img
+        src="{{ url_for('static', filename='Images/PSU logo.png') }}"
+        alt="PSU Logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('status') }}">Printer Status</a></li>
+          <li><a href="{{ url_for('queue') }}">Queue View</a></li>
+          <li><a href="{{ url_for('page') }}">Printer Page</a></li>
+        </ul>
+      </nav>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <p class="message">{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock content %}
+  </body>
+</html>

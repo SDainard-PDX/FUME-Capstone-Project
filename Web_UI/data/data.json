@@ -1,0 +1,12 @@
+{
+    "app-settings": {
+        "job_directory": "",
+        "listening_port": "",
+        "queue_cycle": ""
+    },
+
+    "settings": {
+        "filaments": ["PLA", "ABS", "PETG"],
+        "nozzleSizes": [0.4, 0.6]
+    }
+}

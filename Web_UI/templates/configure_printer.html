@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block content %}
+<div class="config-container">
+  <h2>Settings for {{ request.args.get('printerid') }}</h2>
+  <form class="form-printer">
+    <label for="port-number">Port Number:</label>
+    <input
+      type="number"
+      id="port-number"
+      name="port-number"
+      min="0"
+      step="1"
+      placeholder="Please enter a positive number"
+      required
+    />
+    <label for="filament-type">Filament Type:</label>
+    <select id="filament-type" name="filament-type">
+      <option value="" disabled selected>Select filament type</option>
+      {% for type in settings.filaments %}
+      <option value="{{ filament }}">{{ type }}</option>
+      {% endfor %}
+    </select>
+    <label for="nozzle-size">Nozzle Size:</label>
+    <select id="nozzle-size" name="nozzle-size">
+      <option value="" disabled selected>Select nozzle size</option>
+      {% for size in settings.nozzleSizes %}
+      <option value="{{ size }}">{{ size }}mm</option>
+      {% endfor %}
+    </select>
+    <div class="button-container">
+      <button id="config-apply-btn" type="submit" class="primary-btn white-text">
+	      Apply
+      </button>
+      <button id="config-reset-btn" type="reset" class="info-btn white-text">Reset</button>
+      <button id="config-remove-btn" type="button" class="danger-btn white-text">
+        Remove Printer
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

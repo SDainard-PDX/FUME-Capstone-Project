@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Printer Status</title>
+</head>
+<body>
+    <div class="nav-container">
+        <img src="./Images/PSU logo.png" alt="PSU Logo">
+        <nav>
+            <ul>
+                <li><a href="information.html">Printer Page</a></li>
+                <li><a href="configure.html">Configure Printer</a></li>
+                <li><a href="status.html">Printer Status</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="status-container">
+        <h2>Print Farm Status</h2>
+        <div class="printer-status">
+            <div class="printer green">
+                <p>Printer 1 - Ready</p>
+                <p class="job-info">Job: #3 - Moss Green Frog</p>
+            </div>
+            <div class="printer orange">
+                <p>Printer 2 - Still in Progress</p>
+                <p class="job-info">Job: #2 - Chain Mail</p>
+            </div>
+            <div class="printer red">
+                <p>Printer 3 - Requires Human Interaction</p>
+                <div class="make-ready">
+                    <input type="checkbox" id="printer3-ready" name="printer3-ready">
+                    <label for="printer3-ready">Make Ready</label>
+                </div>
+            </div>
+            <div class="printer green">
+                <p>Printer 4 - Ready</p>
+                <p class="job-info">Job: #3.1 (depend on DB) - Green Frog</p>
+            </div>
+            <div class="printer red">
+                <p>Printer 5 - Requires Human Interaction</p>
+                <div class="make-ready">
+                    <input type="checkbox" id="printer5-ready" name="printer5-ready">
+                    <label for="printer5-ready">Make Ready</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jobs-container">
+        <h2>JOBS NEEDING ASSISTANCE</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Job Name</th>
+                    <th>Printer</th>
+                    <th>Issue</th>
+                    <th>Date/Time Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Moss Frog</td>
+                    <td>Printer 2</td>
+                    <td class="issue">Wrong Diameter Size</td>
+                    <td>04/05/2024 10:00 AM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
